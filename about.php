@@ -35,7 +35,8 @@
         <li><a href="index.php">Home</a></li>
         <li class="current"><a href="about.php">About</a></li>
         <li><a href="forums.php">Forums</a></li>
-        <li><a href="store.php">Store</a></li>
+        <li><a href="login.php">Login</a></li>
+        <li><a href="contact.php">Contact us</a></li>
       </ul>
     </div>
   </div>

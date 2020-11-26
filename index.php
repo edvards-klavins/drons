@@ -34,7 +34,8 @@
       <ul class="nav navbar-nav">
         <li class="current"><a href="index.php">Home</a></li>
         <li><a href="forums.php">Media</a></li>
-        <li><a href="store.php">Store</a></li>
+        <li><a href="login.php">Login</a></li>
+        <li><a href="contact.php">Contact us</a></li>
       </ul>
     </div>
   </div>
