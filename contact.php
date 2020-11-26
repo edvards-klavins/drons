@@ -82,12 +82,44 @@ error_reporting(E_ALL);
 </div>
 </body>
 <?php
+$name = $_POST['name'];
+$surname = $_POST['surname'];
+$email = $_POST['email'];
+$mobile = $_POST['mobile'];
+$question = $_POST['question'];
     if(isset($_POST['send'])){
       echo "<b>Name:</b>{$_POST['name']}<br/>";
       echo "<b>Surname:</b>{$_POST['surname']}<br/>";
       echo "<b>E-Mail:</b>{$_POST['email']}<br/>";
       echo "<b>Phone:</b>{$_POST['mobile']}<br/>";
-      echo "<b>Your Question:</b>{$_POST['question']}";
+      echo "<b>Your Question:</b>{$_POST['question']}<br/>";
+      if(empty($name)){
+        echo '<b>Name cant be empty: <br/>';
+       }
+      elseif  (is_numeric($surname)) {
+        echo "<b>Name cant be numbers<br/>";
+      }
+      if(empty($surname)){
+        echo '<b>Surname cant be empty: <br/>';
+      }    
+      elseif  (is_numeric($surname)) {
+        echo "<b>Surname cant be numbers<br/>";
+      }
+      if(empty($email)){
+         echo '<b>Email cant be empty: <br/>';
+      }    
+      if(empty($mobile)){
+         echo '<b>Mobile cant be empty: <br/>';
+      }
+      elseif  (is_numeric($mobile)) {
+        echo "";
+    }
+      else {
+        echo "<b>Mobile has to be numbers<br/>";
+    }
+      if(empty($question)){
+        echo '<b>Question cant be empty: <br/>';
+      }
     }
 ?>
 </body>
