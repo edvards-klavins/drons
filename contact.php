@@ -82,6 +82,12 @@ error_reporting(E_ALL);
 </div>
 </body>
 <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "drons";
+
+
 $name = $_POST['name'];
 $surname = $_POST['surname'];
 $email = $_POST['email'];
@@ -120,6 +126,19 @@ $question = $_POST['question'];
       if(empty($question)){
         echo '<b>Question cant be empty: <br/>';
       }
+      $conn = new mysqli($servername, $username, $password, $dbname);
+      if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+      }
+      $sql = "INSERT INTO question (user_name, user_surname	, user_email, user_phone, user_question)
+      VALUES ('$name', '$surname', '$email', '$mobile', '$question')";
+
+      if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+      } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+      }
+      $conn->close();
     }
 ?>
 </body>
